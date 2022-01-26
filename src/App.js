@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+
+import SetColorBar from './SetColorBar';
+import ColorDisplay from './ColorDisplay';
+import { useState } from 'react';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  const [currentColor, setCurrentColor] = useState('')
+
+
+  return <main>
+           <ColorDisplay 
+              currentColor = {currentColor}
+           />
+           <SetColorBar 
+              currentColor = {currentColor}
+              setCurrentColor = {setCurrentColor}
+           /> 
+  </main>
 }
 
 export default App;
